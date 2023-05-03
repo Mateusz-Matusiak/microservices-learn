@@ -1,11 +1,11 @@
-package pl.kalati.microservices.controller;
+package pl.kalati.productservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import pl.kalati.microservices.dto.ProductRequest;
-import pl.kalati.microservices.dto.ProductResponse;
-import pl.kalati.microservices.service.ProductService;
+import pl.kalati.productservice.dto.ProductRequest;
+import pl.kalati.productservice.dto.ProductResponse;
+import pl.kalati.productservice.service.ProductService;
 
 import java.util.List;
 

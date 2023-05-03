@@ -1,4 +1,4 @@
-package pl.kalati.microservices.dto;
+package pl.kalati.productservice.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class ProductResponse {
-    private String id;
+public class ProductRequest {
+
     private String name;
     private String description;
     private BigDecimal price;

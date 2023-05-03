@@ -1,4 +1,4 @@
-package pl.kalati.microservices.model;
+package pl.kalati.productservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

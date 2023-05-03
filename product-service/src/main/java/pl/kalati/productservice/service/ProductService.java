@@ -1,12 +1,12 @@
-package pl.kalati.microservices.service;
+package pl.kalati.productservice.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import pl.kalati.microservices.dto.ProductRequest;
-import pl.kalati.microservices.dto.ProductResponse;
-import pl.kalati.microservices.model.Product;
-import pl.kalati.microservices.repository.ProductRepository;
+import pl.kalati.productservice.dto.ProductRequest;
+import pl.kalati.productservice.dto.ProductResponse;
+import pl.kalati.productservice.model.Product;
+import pl.kalati.productservice.repository.ProductRepository;
 
 import java.util.List;
 
