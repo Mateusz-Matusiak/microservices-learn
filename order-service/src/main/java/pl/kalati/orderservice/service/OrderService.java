@@ -14,7 +14,6 @@ import pl.kalati.orderservice.repository.OrderRepository;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 
 @Service
 @Transactional
@@ -23,8 +22,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final WebClient.Builder webClientBuilder;
 
-    public CompletableFuture<Void> placeOrder(OrderRequest orderRequest) {
-        CompletableFuture<Void> future = new CompletableFuture<>();
+    public String placeOrder(OrderRequest orderRequest) {
         List<String> skuCodes = orderRequest.getOrderLineItemsList().stream()
                 .map(OrderLineItemDto::getSkuCode)
                 .toList();
@@ -49,8 +47,7 @@ public class OrderService {
                 .map(this::mapToEntity).toList();
         order.setOrderLineItemList(orderLineItems);
         orderRepository.save(order);
-        future.complete(null);
-        return future;
+        return "success";
     }
 
     private OrderLineItem mapToEntity(OrderLineItemDto orderLineItemDto) {
