@@ -1,0 +1,30 @@
+package pl.kalati.productservice.controller;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import pl.kalati.productservice.dto.ProductRequest;
+import pl.kalati.productservice.dto.ProductResponse;
+import pl.kalati.productservice.service.ProductService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/product")
+@RequiredArgsConstructor
+public class ProductController {
+
+    private final ProductService productService;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createProduct(@RequestBody ProductRequest productRequest) {
+        productService.createProduct(productRequest);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponse> getProducts() {
+        return productService.fetchAllProducts();
+    }
+}
